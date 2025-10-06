@@ -1,4 +1,4 @@
-# NodeTober 2025 – 31 Frontend Mini App Challenge  
+# JS-31 2025 – 31 Frontend Mini App Challenge  
 ## 31 napos frontend kihívás – minden nap egy mini alkalmazás
 
 A personal challenge to build 31 unique frontend mini apps in 31 days.  
