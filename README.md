@@ -90,4 +90,4 @@ Együttműködés, visszajelzés vagy portfólió kapcsán:
 
 🌐 [www.sandordalmadi.hu](https://sandordalmadi.hu/)  
 🌐 [LinkedIn →](www.linkedin.com/in/dalmadi-sándor-b17007132)
-📧 dalmadisanyi [at] gmail [dot] com
+📧 dalmadisanyi@gmail.com
