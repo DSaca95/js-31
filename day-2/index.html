@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 2 - </title>
+    <title>Day 2 - Color Palette Generator</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="settings-container">
+        <h1>Color Palette Generator</h1>
+        <button id="theme-toggle">🌙 Dark Mode</button>
+        <label for="color-count">Number of colors
+            <input type="number" id="color-count" min="2" max="10" value="5" />
+        </label>
+        
+
+        <label for="contrast-type">Contrast Type
+            <select id="contrast-type">
+                <option value="any">Random</option>
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+                <option value="monochrome">Monochrome</option>
+                <option value="pure">Pure Colors</option>
+                <option value="warm-cool">Warm-Cool</option>
+                <option value="complementary">Complementary</option>
+                <option value="light-dark">Light-Dark</option>
+                <option value="vivid-pastel">Vivid-Pastel</option>
+                <option value="saturation">Saturation</option>
+                <option value="quantity">Quantity</option>
+            </select>
+        </label>
+
+        <button id="generate">✨ Generate</button>
+    </div>
     
+    <section id="palette" class="palette-grid"></section>
+    <button id="save">💾 Save Palette</button>
+    <h2>Saved Palettes</h2>
+    <section id="saved-palettes"></section>
 </body>
 </html>

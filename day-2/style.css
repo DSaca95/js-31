@@ -1,0 +1,204 @@
+:root {
+    --bg-color: #f5f5f5;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --accent: rgb(211, 48, 122);
+    --accent-hover: rgb(81, 18, 47);
+    --save-color: rgb(7, 118, 216);
+    --save-hover: rgb(1, 54, 99);
+    --danger: #e74c3c;
+    --danger-hover: #c0392b;
+    --input-bg: #f9f9f9;
+    --border-color: #ccc;
+    --shadow: rgba(0, 0, 0, 0.05);
+  }
+  
+  body.dark {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #eee;
+    --accent: rgb(255, 105, 180);
+    --accent-hover: rgb(180, 40, 90);
+    --save-color: rgb(0, 150, 255);
+    --save-hover: rgb(0, 90, 160);
+    --danger: #ff4c4c;
+    --danger-hover: #cc3333;
+    --input-bg: #2a2a2a;
+    --border-color: #444;
+    --shadow: rgba(255, 255, 255, 0.05);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  body {
+    padding: 2rem;
+    background: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+  }
+  
+  button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  #generate {
+    background-color: var(--accent);
+    color: white;
+    margin: 1rem;
+  }
+  
+  #generate:hover {
+    background-color: var(--accent-hover);
+  }
+  
+  #save {
+    background-color: var(--save-color);
+    color: white;
+    margin: 1rem;
+  }
+  
+  #save:hover {
+    background-color: var(--save-hover);
+  }
+
+  #theme-toggle {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+  }
+  
+  .remove-btn {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--danger);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .remove-btn:hover {
+    background-color: var(--danger-hover);
+  }
+  
+  input[type="number"],
+  select {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  input[type="number"]:hover,
+  select:hover {
+    border-color: #999;
+  }
+  
+  input[type="number"]:focus,
+  select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(211, 48, 122, 0.2);
+    outline: none;
+  }
+  
+  .settings-container input,
+  .settings-container select {
+    box-shadow: 0 2px 4px var(--shadow);
+    background: var(--card-bg);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-color);
+  }
+  
+  .settings-container label {
+    margin: 0.5rem;
+  }
+  
+  .settings-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
+  
+  .color-card {
+    width: 100%;
+    max-width: 140px;
+    padding: 2rem;
+    border-radius: 8px;
+    background: var(--card);
+    color: var(--text);
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .color-card:hover {
+    transform: scale(1.05);
+  }
+
+  .color-card.light-text { color: #f8f8f8; }
+  .color-card.dark-text { color:#333; }
+  
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 140px));
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+  
+  .palette-grid::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .palette-grid::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 4px;
+  }
+  
+  .palette-group {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+  }
+  
+  .palette-group h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
