@@ -3,9 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 3 - </title>
+    <title>Day 3 - To-do App</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
 </head>
 <body>
+    <nav class="settings"><button id="theme-toggle">Color Mode 🌙 / ☀️</button></nav>
+    <main class="container">
+            <h1>Daily TO-DOs</h1>
+
+        <div class="input-group">
+            <input type="text" id="todo-input" placeholder="Your new task is..." />
+            <select id="priority-select">
+                <option value="">-- Choose Priority Level --</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <input type="text" id="tag-input" placeholder="add Tags with commas. e.g: work, home" />
+            <button id="add-btn">➕ Add</button>
+        </div>
+
+        <div id="stats">
+            <p>📋 Total: <span id="stat-total">0</span></p>
+            <p>✅ Completed: <span id="stat-completed">0</span></p>
+            <p>📅 Today: <span id="stat-today">0</span></p>
+        </div>
+
+        <div class="filter-container">
+        <select id="priority-filter">
+            <option value="">All</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+        <ul id="todo-list"></ul>
+
+        <p id="empty-state">You do not have any tasks Today.</p>
+
+        <section id="saved-palettes" style="display: none"></section>
+    </main>
     
 </body>
 </html>
