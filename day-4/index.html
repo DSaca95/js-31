@@ -3,9 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 4 - </title>
+    <title>Day 4 - Tip Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    
+    <div class="container">
+        <nav>
+        <h1>Tip Calculator</h1>
+        <button id="theme-toggle">Color Mode</button>
+        </nav>
+
+        <div class="grid">
+
+            <div class="inputs">
+                <div class="input-group">
+                    <label for="currency">Currency</label>
+                    <select id="currency">
+                        <option value="HUF">Ft</option>
+                        <option value="EUR">€</option>
+                    </select>
+                </div>
+            
+                <div class="input-group">
+                    <label for="bill">Bill Amount</label>
+                    <input type="range" id="bill-range" min="0" max="1000000" step="10" />
+                    <input type="number" id="bill" placeholder="e.g. 12000" />
+                </div>
+
+            
+                <div class="input-group">
+                    <label for="tip">Tip Percentage</label>
+                    <input type="range" id="tip-range" min="0" max="30" step="1" />
+                    <input type="number" id="tip" min="0" max="30" step="1" placeholder="e.g. 10%"/>
+                </div>
+
+                <div class="input-group">
+                    <label>Number of People</label>
+                    <input type="range" id="people-range" min="1" max="20" step="1" />
+                    <input type="number" id="people" min="1" max="20" step="1" placeholder="e.g. 3" />
+                </div>
+            </div>
+
+            <div class="result">
+                <h2>Results</h2>
+                <p>Tip Amount: <span id="tip-amount">0</span></p>
+                <p>Tip per Person: <span id="tip-per-person">0</span></p>
+                <p>Total per Person: <span id="total-per-person">0</span></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
