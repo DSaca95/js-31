@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6 - Accordion FAQ Basic</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+  <section class="faq-icon">
+    <h2>Accordion with Animated Icons</h2>
+  
+    <div class="accordion">
+      <div class="item">
+        <button class="trigger" aria-expanded="false" aria-controls="panel1" id="trigger1">
+          <span class="label">What is this?</span>
+          <span class="icon">+</span>
+        </button>
+        <div class="panel" id="panel1" role="region" aria-labelledby="trigger1" hidden>
+          <p>This accordion includes animated icons that rotate to indicate open/closed state.</p>
+        </div>
+      </div>
+  
+      <div class="item">
+        <button class="trigger" aria-expanded="false" aria-controls="panel2" id="trigger2">
+          <span class="label">What is this?</span>
+          <span class="icon">+</span>
+        </button>
+        <div class="panel" id="panel2" role="region" aria-labelledby="trigger2" hidden>
+          <p>Icons provide intuitive visual feedback and improve user experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</body>
+</html>

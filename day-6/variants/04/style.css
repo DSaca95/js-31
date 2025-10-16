@@ -1,0 +1,73 @@
+.exo-2-regular {
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --color-bg: #f4f4f7;
+  --color-box: #ffffff;
+  --color-text: #1e1e2f;
+  --color-accent: #ff6b6b;
+  --color-muted: #6c6f7e;
+  --shadow: rgba(0, 0, 0, 0.2);
+}
+
+body.dark {
+  --color-bg: #1e1e2f;
+  --color-box: #2b2d42;
+  --color-text: #f4f4f7;
+  --color-accent: #ff6b6b;
+  --color-muted: #a8a8b3;
+  --shadow: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  font-family: "Exo 2", sans-serif;
+  margin: 0;
+  padding: 2rem;
+}
+
+faq-scale {
+  max-width: 640px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.accordion .item {
+  border: 2px solid var(--color-accent);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background: var(--color-box);
+  box-shadow: 0 2px 6px var(--shadow);
+  overflow: hidden;
+}
+
+.trigger {
+  width: 100%;
+  padding: 1rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.panel {
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 0 1rem;
+  color: var(--color-accent);
+}
+
+.panel.open {
+  transform: scaleY(1);
+  opacity: 1;
+  pointer-events: auto;
+  padding: 1rem;
+}

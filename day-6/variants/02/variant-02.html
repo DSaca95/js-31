@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6 - Accordion FAQ Basic</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <section class="faq-css">
+        <h2>CSS-only Accordion</h2>
+      
+        <details>
+          <summary>What is a CSS-only accordion?</summary>
+          <div class="panel">
+            <p>This uses native HTML <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> elements with no JavaScript.</p>
+          </div>
+        </details>
+      
+        <details>
+          <summary>Why is it accessible?</summary>
+          <div class="panel">
+            <p>Browsers handle keyboard navigation and ARIA roles automatically, making it screen-reader friendly.</p>
+          </div>
+        </details>
+      
+        <details>
+          <summary>Can I style it?</summary>
+          <div class="panel">
+            <p>Yes! You can style <code>details[open]</code> and animate transitions with care.</p>
+          </div>
+        </details>
+      </section>
+</body>
+</html>
