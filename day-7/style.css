@@ -1,0 +1,120 @@
+.nunito-regular {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+:root {
+  --bg-base: #ffffff;
+  --color-accent: #00e6b4;
+  --color-muted: #cccccc;
+}
+
+[data-theme="dark"] {
+  --color-accent: #f4a261;
+  --color-muted: #444444;
+}
+
+[data-theme-level="1"] body {
+  background-color: #f8f8f8;
+  color: #222;
+}
+[data-theme-level="2"] body {
+  background-color: #e8e8e8;
+  color: #222;
+}
+[data-theme-level="3"] body {
+  background-color: #d8d8d8;
+  color: #222;
+}
+[data-theme-level="4"] body {
+  background-color: #c8c8c8;
+  color: #222;
+}
+[data-theme-level="5"] body {
+  background-color: #b8b8b8;
+  color: #222;
+}
+[data-theme-level="6"] body {
+  background-color: #a8a8a8;
+  color: #eee;
+}
+[data-theme-level="7"] body {
+  background-color: #888888;
+  color: #eee;
+}
+[data-theme-level="8"] body {
+  background-color: #666666;
+  color: #eee;
+}
+[data-theme-level="9"] body {
+  background-color: #444444;
+  color: #eee;
+}
+[data-theme-level="10"] body {
+  background-color: #1e1e1e;
+  color: #eee;
+}
+
+[data-theme-level="1"] body { --color-accent: #2a9d8f; }
+[data-theme-level="2"] body { --color-accent: #2a9d8f; }
+[data-theme-level="3"] body { --color-accent: #2a9d8f; }
+[data-theme-level="4"] body { --color-accent: #2a9d8f; }
+[data-theme-level="5"] body { --color-accent: #2a9d8f; }
+
+[data-theme-level="6"] body { --color-accent: #e76f51; }
+[data-theme-level="7"] body { --color-accent: #e76f51; }
+[data-theme-level="8"] body { --color-accent: #e76f51; }
+[data-theme-level="9"] body { --color-accent: #e76f51; }
+[data-theme-level="10"] body { --color-accent: #e76f51; }
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-color, #222);
+  font-family: 'Nunito', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-wave {
+  max-width: 640px;
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.theme-wave h2 {
+    font-size: clamp(2.35rem, 1vw, 2.5rem);
+}
+
+.wave {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 120px;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.wave span {
+  width: 16px;
+  background: var(--color-muted);
+  transition: height 0.3s ease, background 0.3s ease;
+  border-radius: 12px;
+}
+
+.wave span.active {
+  background: var(--color-accent);
+}
+
+.wave span {
+  min-width: 16px;
+  touch-action: manipulation;
+}
+
+@media (max-width: 480px) {
+  .wave {
+    height: 80px;
+    gap: 4px;
+  }
+}
