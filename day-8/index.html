@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 8 - </title>
+    <title>Day 8 - Image Carousel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    
+    <section class="carousel">
+        <div class="carousel-track" id="img-container"></div>
+        <button class="nav prev">
+            <span class="icon">‹</span>
+            <span class="label">Previous</span>
+        </button>
+        <button class="nav next">
+            <span class="label">Next</span>
+            <span class="icon">›</span>
+        </button>
+        <div class="indicators"></div>
+      </section>
+      <div class="carousel-preview" id="preview-bar"></div>
+      <h1>Image Carousel</h1>
 </body>
 </html>
