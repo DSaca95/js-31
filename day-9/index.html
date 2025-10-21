@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 9 - </title>
+    <title>Day 9 - Progress Bar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
+    <section class="progress-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill">
+                <svg class="wave-layer wave-1" viewBox="0 0 120 20" preserveAspectRatio="none">
+                    <path class="wave" d="M0 10 Q 30 0 60 10 T 120 10 V20 H0 Z" />
+                  </svg>
+                  <svg class="wave-layer wave-2" viewBox="0 0 120 20" preserveAspectRatio="none">
+                    <path class="wave" d="M0 12 Q 30 2 60 12 T 120 12 V20 H0 Z" />
+                  </svg>
+                  <svg class="wave-layer wave-3" viewBox="0 0 120 20" preserveAspectRatio="none">
+                    <path class="wave" d="M0 14 Q 30 4 60 14 T 120 14 V20 H0 Z" />
+                  </svg>
+                <span class="progress-label" id="progress-label">0%</span>
+              </div>
+        </div>
+
+        <div class="progress-controls">
+            <button id="decrement">-</button>
+            <button id="increment">+</button>
+            <button id="reset">Reset</button>
+        </div>
+        <div class="emoji-confetti" id="emoji-confetti"></div>
+    </section>
     
 </body>
 </html>
