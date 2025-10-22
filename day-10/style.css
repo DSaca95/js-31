@@ -96,7 +96,7 @@ body {
 .modal-foreground h2 {
     font-weight: 800;
     font-size: calc(2.5rem + 1vw);
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     border-bottom: solid 3px rgba(255, 255, 255, 0.3);
     box-shadow: border-box;
     display: block;

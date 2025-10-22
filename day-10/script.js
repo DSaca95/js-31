@@ -6,6 +6,8 @@ const modal = overlay.querySelector(".modal");
 const backdrop = modal.querySelector(".modal-backdrop");
 const foreground = modal.querySelector(".modal-foreground");
 
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
 const openModal = () => {
     overlay.hidden = false;
     overlay.classList.add("show");
@@ -33,12 +35,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.key === "Escape") closeModal();
     });
 
-    document.addEventListener("mousemove", (e) => {
-        const { innerWidth, innerHeight } = window;
-        const offsetX = ((e.clientX / innerWidth) - 0.5) * 10;
-        const offsetY = ((e.clientY / innerHeight) - 0.5) * 10;
+    if (!isTouchDevice) {
+        document.addEventListener("mousemove", (e) => {
+            const { innerWidth, innerHeight } = window;
+            const offsetX = ((e.clientX / innerWidth) - 0.5) * 10;
+            const offsetY = ((e.clientY / innerHeight) - 0.5) * 10;
 
-        modal.style.transform = `translate(${offsetX * 10}px, ${offsetY * 10}px) scale(1)`;
-        backdrop.style.transform = `translate(${offsetX * 14}px, ${offsetY * 14}px)`;
-    })
+            modal.style.transform = `translate(${offsetX * 10}px, ${offsetY * 10}px) scale(1)`;
+            backdrop.style.transform = `translate(${offsetX * 14}px, ${offsetY * 14}px)`;
+        });
+    }
 });
