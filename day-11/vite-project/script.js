@@ -16,8 +16,11 @@ const phrases = {
   let directionW = 1;
   let directionWd = 1;
   let isSlanted = false;
+
+  let cityInput;
+  let phraseEl;
   
-  const API_KEY = "7a27cd2669ca454e0c96909a972216d8";
+  const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
   
   const normalize = (str) => str.toLowerCase().replace(/s$/, "");
 
