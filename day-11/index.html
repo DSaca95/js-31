@@ -3,9 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 11 - </title>
+    <title>Day 11 - Weather App</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:slnt,wght@-15..0,300..1000&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    
+    <h1>Weather Type</h1>
+    <div class="input-block">
+        <input type="text" id="city" placeholder="Enter city name" />
+        <button id="get-weather">Get Weather</button>
+      </div>
+      
+      <div class="main-block">
+        <div class="weather-phrase">Weather Type</div>
+      </div>
+      
+      <div class="data-layout">
+        <div class="temp-card">
+            <div class="label">--°C</div>
+            <img id="weather-icon" class="icon" src="" alt="weather icon">
+          </div>
+      
+        <div class="info-grid">
+            <div class="data-card desc">
+                <div class="card-label">Description</div>
+                <div class="card-value">broken clouds</div>
+              </div>
+              
+              <div class="data-card wind">
+                <div class="card-label">Wind</div>
+                <div class="card-value">💨 13.38 m/s</div>
+              </div>
+              
+              <div class="data-card humidity">
+                <div class="card-label">Humidity</div>
+                <div class="card-value">💧 57%</div>
+              </div>
+              
+              <div class="data-card pressure">
+                <div class="card-label">Pressure</div>
+                <div class="card-value">🔽 1012 hPa</div>
+              </div>
+        </div>
+      </div>
 </body>
 </html>
