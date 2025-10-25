@@ -1,11 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 12 - </title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day-12-Quote Explorer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="style.css" rel="stylesheet" />
+    <script type="module" src="script.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Quote Explorer</h1>
+        <div class="controls">
+          <div class="input-block">
+            <div class="search-group">
+              <input type="text" id="author" placeholder="Search by author" />
+              <button id="search" class="secondary">Search</button>
+            </div>
+            <button id="random" class="primary">Random Quote</button>
+          </div>
+
+          <div class="category-block">
+            <label>Get Quote by Category</label>
+            <div class="category-list" role="list">
+              <span data-tag="inspirational">Inspirational</span>
+              <span data-tag="life">Life</span>
+              <span data-tag="love">Love</span>
+              <span data-tag="technology">Technology</span>
+              <span data-tag="education">Education</span>
+            </div>
+            <button id="get-quote" class="secondary">Get Quote</button>
+          </div>
+
+      </header>
+
+      <main>
+        <blockquote class="quote">
+          <p class="quote-text">Loading...</p>
+          <footer class="quote-author">—</footer>
+        </blockquote>
+      </main>
+    </div>
+  </body>
 </html>
