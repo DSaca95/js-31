@@ -1,0 +1,353 @@
+:root {
+  --bg: #f9f9f9;
+  --fg: #222;
+  --accent: #ef5350;
+  --border: #ddd;
+  --muted: #666;
+
+  --type-normal: #a8a77a;
+  --type-fire: #ee8130;
+  --type-water: #6390f0;
+  --type-electric: #f7d02c;
+  --type-grass: #7ac74c;
+  --type-ice: #96d9d6;
+  --type-fighting: #c22e28;
+  --type-poison: #a33ea1;
+  --type-ground: #e2bf65;
+  --type-flying: #a98ff3;
+  --type-psychic: #f95587;
+  --type-bug: #a6b91a;
+  --type-rock: #b6a136;
+  --type-ghost: #735797;
+  --type-dragon: #6f35fc;
+  --type-dark: #705746;
+  --type-steel: #b7b7ce;
+  --type-fairy: #d685ad;
+}
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: sans-serif;
+  background: var(--bg);
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+h1 {
+  font-size: clamp(2rem, 1vw, 2.25rem);
+  color: var(--accent);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.input,
+button {
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 0.6rem 1rem;
+}
+
+button.primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  cursor: pointer;
+}
+
+.card {
+  position: relative;
+  background: linear-gradient(to bottom, #fdfdfd, #f1f1f1);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  max-width: 360px;
+  margin-inline: auto;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  border: 4px solid transparent;
+  z-index: 0;
+  cursor: grab;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 20px;
+  background: var(--card-gradient, var(--type-normal));
+  z-index: -1;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card.dragging {
+    transform: scale(1.02);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+    cursor: grabbing;
+}
+
+.card.rare {
+  position: relative;
+}
+
+.card.rare .card-border {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.status-label {
+  position: relative;
+  z-index: 2;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--type-normal);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.rare-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.rare-line {
+  fill: none;
+  stroke: url(#rare-gradient);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 80 1520; /* 80px fénycsík, 1520px hézag */
+}
+
+.rare-line.left {
+  stroke-dashoffset: 0;
+  animation: rare-left 4s linear infinite;
+}
+
+.rare-line.right {
+  stroke-dashoffset: 800;
+  animation: rare-right 4s linear infinite;
+}
+
+@keyframes rare-left {
+  to {
+    stroke-dashoffset: -1600;
+  }
+}
+
+@keyframes rare-right {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.legendary-label {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: gold;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid gold;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  display: inline-block;
+  animation: fade-in 0.6s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.card img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 12px;
+  border: 2px solid #ddd;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.card h2,
+.card p#pokemon-id {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1rem;
+  border-radius: 6px;
+  display: block;
+  max-width: 90%;
+  margin-inline: auto;
+  word-break: break-word;
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin: 0.5rem 0 0.25rem;
+  text-transform: capitalize;
+  color: var(--fg);
+}
+
+.card p#pokemon-id {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.types {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1rem;
+  border-radius: 6px;
+  max-width: 90%;
+  margin-inline: auto;
+}
+
+.types span {
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-weight: bold;
+  color: white;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+}
+
+.stats {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.9rem;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.stats p {
+  margin: 0.4rem 0;
+  display: flex;
+  justify-content: space-between;
+  font-family: monospace;
+}
+
+.stat-bar {
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 12px;
+  margin-top: 4px;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.feedback {
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.hidden {
+  display: none;
+}
+
+.types .normal {
+  background: var(--type-normal);
+}
+.types .fire {
+  background: var(--type-fire);
+}
+.types .water {
+  background: var(--type-water);
+}
+.types .electric {
+  background: var(--type-electric);
+}
+.types .grass {
+  background: var(--type-grass);
+}
+.types .ice {
+  background: var(--type-ice);
+}
+.types .fighting {
+  background: var(--type-fighting);
+}
+.types .poison {
+  background: var(--type-poison);
+}
+.types .ground {
+  background: var(--type-ground);
+}
+.types .flying {
+  background: var(--type-flying);
+}
+.types .psychic {
+  background: var(--type-psychic);
+}
+.types .bug {
+  background: var(--type-bug);
+}
+.types .rock {
+  background: var(--type-rock);
+}
+.types .ghost {
+  background: var(--type-ghost);
+}
+.types .dragon {
+  background: var(--type-dragon);
+}
+.types .dark {
+  background: var(--type-dark);
+}
+.types .steel {
+  background: var(--type-steel);
+}
+.types .fairy {
+  background: var(--type-fairy);
+}
