@@ -1,0 +1,86 @@
+.merriweather-regular {
+    font-family: "Merriweather", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+
+  :root {
+    --bg: #f8f8f8;
+    --fg: #242424;
+    --accent: #00489a;
+  }
+
+body {
+    font-family: "Merriweather", serif;
+    margin: 0;
+    padding: 1rem;
+    background-color: var(--bg);
+    color: var(--fg);
+    box-sizing: border-box;
+}
+
+.converter {
+    max-width: 400px;
+    margin: auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.selectors {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+input, select {
+    padding: 0.5rem;
+    font-family: "Merriveather", serif;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+}
+
+.swap-button {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.swap-button.flipped {
+    transform: rotate(180deg);
+}
+
+#result {
+    max-width: 400px;
+    font-size: clamp(1.5rem, 1vw, 1.75rem);
+    font-weight: 800;
+    margin: auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    padding: 1rem 2rem;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+
+}
+
+#error {
+    color: red;
+    font-weight: 800;
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
