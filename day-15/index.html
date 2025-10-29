@@ -1,11 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 15 - </title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day-15 Movie Explorer</title>
+
+    <link rel="stylesheet" href="./src/style.css">
+    <script type="module" src="./src/script.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+        <header class="main-header">
+            <nav>
+                <button id="all-btn">All</button>
+                <button id="movies-btn">Movies</button>
+                <button id="series-btn">Series</button>
+                <input type="text" id="search" placeholder="Search for a title..." />
+            </nav>
+        </header>
+        <section class="hero-slider" id="hero-slider"></section>
+
+        <main>
+            <section>
+                <h2>Sci-Fi</h2>
+                <div class="scroll-row" id="sci-fi-row"></div>
+            </section>
+            <section>
+                <h2>Horror</h2>
+                <div class="scroll-row" id="horror-row"></div>
+            </section>
+            <section>
+                <h2>Thriller</h2>
+                <div class="scroll-row" id="thriller-row"></div>
+            </section>
+        </main>
+    </div>
+  </body>
 </html>
