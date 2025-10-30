@@ -1,11 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 16 - </title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day-16-GitHub Profiel Viewer</title>
+
+    <link rel="stylesheet" href="./src/style.css">
+    <script type="module" src="./src/script.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>GitHub Profile Viewer</h1>
+        <input type="text" id="username" placeholder="Enter a GitHub username" />
+        <button id="search-btn" class="primary">Search</button>
+        <button id="toggle-theme" class="secondary">Color Mode</button>
+      </header>
+
+      <main id="profile-container"></main>
+    </div>
+  </body>
 </html>
