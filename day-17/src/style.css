@@ -129,6 +129,7 @@ input, button {
     width: 100%;
     border-radius: 0;
     object-fit: cover;
+    aspect-ratio: 6/4;
     box-shadow: var(--shadow);
 }
 
@@ -144,6 +145,7 @@ input, button {
 }
 
 .recipe-card h2 {
+    display: inline-block;
     font-family: var(--font-title);
     font-size: clamp(2.5rem, 5vw, 3rem);
     font-weight: 600;
@@ -167,10 +169,12 @@ input, button {
 }
 
 .recipe-card a {
-    display: inline-block;
+    display: block;
     color: var(--accent);
     font-family: var(--font-body);
     font-weight: 800;
+    width: 150px;
+    text-wrap: nowrap;
     text-transform: uppercase;
     text-decoration: none;
     transform: scale(1);
@@ -220,6 +224,10 @@ input, button {
     background-color: var(--text-muted);
     box-shadow: none;
     filter: grayscale(100%);
+}
+
+.scroll-btn:hover {
+    background-color: var(--accent-darker);
 }
 
 @media (max-width: 768px) {
