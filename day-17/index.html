@@ -1,11 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 17 - </title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day-17-Recipe-Finder</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="./src/style.css">
+    <script type="module" src="./src/script.js" defer></script>
+  </head>
+  <body>
+    <svg class="bg-texture" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+      <defs>
+        <pattern id="wave" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M0 20 Q10 0 20 20 T40 20" stroke="#e0d6c9" stroke-width="0.5" fill="none"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#wave)" />
+    </svg>    
+
+    <div id="app">
+      <header>
+       <h1>Recipe Finder</h1>
+       <div class="search-bar">
+          <input type="text" id="ingerdient-input" placeholder="Search by ingredients..." />
+          <button id="search-btn">Search</button>
+        </div>
+      </header>
+
+      <main id="container">
+        <div class="scroll-wrapper">
+          <button id="scroll-left" class="scroll-btn" disabled>←</button>
+          <div id="recipe-container"></div>
+          <button id="scroll-right" class="scroll-btn">→</button>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
