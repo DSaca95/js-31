@@ -1,11 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 18 - </title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day-18-Mini Blog Reader</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/style.css">
+    <script src="./src/script.js" type="module" defer></script>
+  </head>
+  <body>
+    <header>
+        <button id="menu-toggle">☰</button>
+        <h1>Mini Blog</h1>
+    </header>
+
+    <div id="app">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Library</a></li>
+                    <li><a href="#">Write</a></li>
+                    <li><button id="toggle-theme">Color Mode</button></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main id="blog-container"></main>
+
+        <aside class="staff-picks">
+            <h2>Staff Picks</h2>
+            <ul id="staff-list"></ul>
+        </aside>
+    </div>
+  </body>
 </html>
