@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 19 - </title>
+    <title>Day 19 - Drawing Canvas App</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" type="module" defer></script>
 </head>
 <body>
-    
+    <header>
+        <h1>Drawing Canvas App</h1>
+        <div class="nav-buttons">
+            <button id="controls-toggle">Tools</button>
+            <button id="export-btn">Export</button>
+        </div>
+        
+    </header>
+
+    <div class="controls">
+        <label>
+            Color:
+            <input type="color" id="colorPicker" value="#000000">
+        </label>
+        <label>
+            Background:
+            <input type="color" id="bgColorPicker" value="#ffffff">
+        </label>
+        <label>
+            Brush size:
+            <input type="range" id="brushSize" min="1" max="50" value="5">
+        </label>
+        <div class="brush-tools">
+            <button class="brush-btn" data-brush="pen">Pen</button>
+            <button class="brush-btn" data-brush="pencil">Pencil</button>
+            <button class="brush-btn" data-brush="fill">Filler</button>
+            <button class="brush-btn" data-brush="easer">Easer</button>
+        </div>
+        <button id="undoBtn">Undo</button>
+        <button id="redoBtn">Redo</button>
+        <button id="clearBtn">Clear</button>
+    </div>
+
+    <div id="previewModal" class="modal closed">
+        <div class="modal-content">
+            <span id="closePreview">&times;</span>
+            <h2>Export Preview</h2>
+            <img id="previewImage" alt="Preview">
+            <div class="export-buttons">
+                <button id="downloadPng">PNG</button>
+                <button id="downloadJpg">JPG</button>
+                <button id="downloadSvg">SVG</button>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="drawingCanvas"></canvas>
 </body>
 </html>
