@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 20 - </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 20 - Voice Recorder App</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script type="module" src="./src/script.js" defer></script>
 </head>
 <body>
-    
+  <header>
+    <h1>Voice Recorder</h1>
+    <button id="startBtn">Start Recording</button>
+    <button id="stopBtn" disabled>Stop Recording</button>
+    <button id="playBtn" disabled>Play</button>
+    <button id="downloadBtn" disabled>Download</button>
+    <div class="control-row">
+        <div class="slider-wrapper">
+            <label for="volumeSlider">🔉 Volume</label>
+            <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="1">
+        </div>
+        <div class="slider-wrapper">
+            <span id="timeLabel">00:00 / 00:00</span>
+            <input id="progressBar" type="range" min="0" max="100" step="0.1" value="0">
+        </div>
+    </div>
+  </header>
+
+  <svg id="viz" width="100%" height="100%" viewBox="0 0 400 400" shape-rendering="geometricPrecision">
+    <defs>
+      <filter id="blur">
+        <feGaussianBlur stdDeviation="20" />
+      </filter>
+    </defs>
+  </svg>
 </body>
 </html>
