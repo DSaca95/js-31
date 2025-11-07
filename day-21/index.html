@@ -3,9 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 21 - </title>
+    <title>Day 21 - Markdown Previewer</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" type="module" defer></script>
+
 </head>
 <body>
+    <header>
+        <h1>Markdown Previewer</h1>
+    </header>
+
+    <aside class="sidebar">
+        <h2>Controls</h2>
+
+        <div class="control">
+            <label for="fontFamily">Font</label>
+            <select id="fontFamily">
+                <option value="Inter, sysetem-ui, sans-serif">Sans (Inter)</option>
+                <option value='"IBM Plex Serif", Georgia, serif'>Serif (Plex)</option>
+                <option value='"IBM Plex Mono", ui-monospace, monospace'>Mono (Plex)</option>
+            </select>
+        </div>
+
+        <div class="control">
+            <label for="typeScale">Typescale</label>
+            <select id="typeScale">
+                <option value="1.067">1.067 - Minor Second</option>
+                <option value="1.125">1.125 - Major Second</option>
+                <option value="1.25">1.25 - Minor Third</option>
+                <option value="1.333">1.333 - Major Third</option>
+                <option value="1.414">1.414 - Perfect Fourth</option>
+                <option value="1.618">1.618 - Golden Ratio</option>
+              </select>
+        </div>
+
+        <div class="control">
+            <label for="lineHeight">Line Height</label>
+            <input id="lineHeight" type="range" min="1.3" max="2.0" step="0.01" value="1.7">
+        </div>
+
+        <div class="control">
+            <label for="letterSpacing">Tracking</label>
+            <input id="letterSpacing" type="range" min="0" max="0.08" step="0.005" value="0">
+        </div>
+
+        <div class="control">
+            <label for="columns">Columns</label>
+            <input id="columns" type="range" min="1" max="5" step="1" value="1">
+        </div>
+
+        <div class="control">
+            <label for="pageMargin">Margins</label>
+            <input id="pageMargin" type="range" min="0" max="64" step="2" value="32">
+        </div>
+    </aside>
+
+    <main class="wrap">
+        <section class="pane">
+            <div class="title">Editor</div>
+            <textarea id="editor">
+                # Write a markdown...
+
+                - Titles: #, ##, ###
+                - Italic: *italic*
+                - Bold: **bold**
+                - Link: [link](https://example.com)
+                - List: -, 1.
+            </textarea>
+        </section>
+
+        <section class="pane">
+            <div class="title">Preview</div>
+            <article id="preview" aria-live="polite"></article>
+        </section>
+    </main>
     
 </body>
 </html>
