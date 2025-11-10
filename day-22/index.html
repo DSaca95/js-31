@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 22 - </title>
+    <title>Day 22 - Stopwatch App</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./script.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
+    <div class="stopwatch">
+        <header>
+            <button id="modeToggle">Color Mode</button>
+            <button id="export">Export</button>
+        </header>
+        <div id="display" class="display">00:00.000</div>
+        <div class="controls">
+            <button id="startStop">Start</button>
+            <button id="reset">Reset</button>
+            <button id="lap">Lap</button>
+        </div>
+
+        <div class="manual">
+            <h2>Hotkeys / Controls</h2>
+            <ul>
+              <li><strong>[Space]</strong> – Start / Stop</li>
+              <li><strong>[R]</strong> – Reset</li>
+              <li><strong>[L]</strong> – Lap</li>
+            </ul>
+        </div>
+
+        <ul id="laps" class="laps"></ul>
+    </div>
 </body>
 </html>

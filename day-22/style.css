@@ -1,0 +1,183 @@
+:root {
+    --bg: #111;
+    --text: #0f0;
+
+    --display-bg: #000;
+    --display-border: #0f0;
+    --display-glow: 0 0 20px #0f0;
+
+    --btn-bg: #222;
+    --btn-border: #0f0;
+    --btn-text: #0f0;
+    --btn-hover-bg: #0f0;
+    --btn-hover-text: #000;
+
+    --btn-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.1),
+                inset -2px -2px 5px rgba(0, 0, 0, 0.6),
+                2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+  
+body.light {
+    --bg: #f7f7f7;
+    --text: #111;
+
+    --display-bg: #fff;
+    --display-border: #333;
+    --display-glow: none;
+
+    --btn-bg: #eee;
+    --btn-border: #333;
+    --btn-text: #333;
+    --btn-hover-bg: #333;
+    --btn-hover-text: #fff;
+
+    --btn-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.6),
+                inset -2px -2px 5px rgba(0, 0, 0, 0.1),
+                2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+}
+  
+.stopwatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Courier New', monospace;
+    padding: 2rem;
+    min-height: 100vh;
+  
+}
+
+.stopwatch header,
+.display,
+.controls {
+    width: 16ch;
+    margin-bottom: 1rem;
+}
+
+.stopwatch header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stopwatch header button {
+    flex: 1;
+    margin: 0 0.25rem;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(--btn-border);
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: var(--btn-shadow);
+    transition: all 0.3s ease;
+}
+
+.stopwatch header button:hover {
+    background: var(--btn-hover-bg);
+    color: var(--btn-hover-text);
+    box-shadow: inset 1px 1px 3px rgba(255,255,255,0.3),
+                0 0 10px var(--btn-border);
+}
+
+.display {
+    font-family: 'Orbitron', monospace;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    background: var(--display-bg);
+    padding: 1rem 2rem;
+    border: 2px solid var(--display-border);
+    color: var(--text);
+    text-shadow: var(--display-glow);
+    border-radius: 8px;
+    box-shadow: var(--display-glow);
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 16ch;
+}
+
+.controls button {
+    flex: 1;
+    min-width: 6rem;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(--btn-border);
+    padding: 0.6rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: var(--btn-shadow);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.controls button:hover {
+    background: var(--btn-hover-bg);
+    color: var(--btn-hover-text);
+    box-shadow: inset 1px 1px 3px rgba(255,255,255,0.3),
+                0 0 10px var(--btn-border);
+}
+
+.laps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 700px;
+}
+
+.laps li {
+    background: var(--display-bg);
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--btn-border);
+    padding: 0.5rem;
+    font-family: 'Courier New', monospace;
+}
+
+.manual {
+    margin-top: 1rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9em;
+    color: var(--bg-light);
+  }
+  
+  .manual h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    text-align: center;
+  }
+  
+  .manual ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .manual li {
+    margin: 0.25rem 0;
+  }
+  .manual strong {
+    color: #0ff;
+  }
+
+  body.light .manual {
+    color: #333;
+  }
+
+  body.light .manual strong {
+    color: #0066cc;
+  }
