@@ -1,0 +1,115 @@
+.nunito-regular {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --accent: #ff9500;
+    --darker: #834c00;
+    --bg: #000;
+    --step-1: #333;
+    --step-2: #444;
+    --step-3: #555;
+
+    --lighter: #eee;
+    --lighter-2: #a5a5a5; 
+    --text: #fff;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--step-1);
+}
+
+.calculator {
+    max-width: 640px;
+    margin: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--bg);
+    color: var(--text);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+#display {
+    background: var(--bg);
+    color: var(--text);
+    font-size: clamp(2.5rem, 2.5vw, 2.85rem);
+    padding: 1rem;
+    text-align: right;
+    border-bottom: 1px solid #333;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(60px, 1fr));
+    gap: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    min-height: 60px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: #333;
+    color: var(--text);
+    font-size: clamp(1.25rem, 1.5vw, 1.65rem);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+button[data-type="number"] {
+    background: var(--step-2);
+}
+
+button[data-type="operator"],
+button[data-type="equals"] {
+    background: var(--accent);
+    color: var(--text);
+}
+
+button[data-type="clear"] {
+    background: var(--lighter-2);
+    color: var(--bg);
+}
+
+button:hover {
+    background: var(--step-3);
+}
+
+button[data-type="operator"]:hover,
+button[data-type="equals"]:hover {
+    background: var(--darker);
+}
+
+button[data-type="clear"]:hover {
+    background: var(--lighter);
+    color: var(--step-1);
+}
+
+@media (max-width: 400px) {
+    .calculator {
+        max-width: 100%;
+    }
+
+    button {
+        padding: 1rem;
+    }
+}
