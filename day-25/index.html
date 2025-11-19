@@ -3,9 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 25 - </title>
+    <title>Day 25 - CSS Effects Lab</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./script.js" defer></script>
 </head>
 <body>
-    
+    <div class="effects-lab">
+        <header>
+            <h1>CSS Effects Lab</h1>
+            <button id="themeToggle">Color Mode</button>
+        </header>
+       <main class="editor-layout">
+        <section class="preview-panel">
+            <div class="preview-box effect-hover-scale effect-shadow">Hover me!</div>
+        </section>
+        <aside class="controls">
+            <button data-effect="effect-hover-scale">Scale</button>
+            <button data-effect="effect-hover-rotate">Rotate</button>
+            <button data-effect="effect-hover-shadow">Shadow</button>            <button data-effect="effect-glow">Glow</button>
+            <button data-effect="effect-filter-gray">Grayscale</button>
+            <button data-effect="effect-animate-pulse">Pulse</button>
+
+            <h2>Parameters</h2>
+            <label>
+                Transition Duration:
+                <input type="range" min="0" max="2" step="0.1" value="0.5" id="durationControl">
+            </label>
+
+            <label>
+                Shadow Strength:
+                <input type="range" min="0" max="30" step="1" value="8" id="shadowControl">
+            </label>
+
+            <label>
+                Blur Amount:
+                <input type="range" min="0" max="10" step="0.5" value="2" id="blurControl">
+            </label>
+
+            <label>
+                Pulse Speed:
+                <input type="range" min="0.5" max="5" step="0.1" value="1.5" id="pulseControl">
+            </label>
+
+            <h2>Fill Options</h2>
+            <div class="fill-toggle">
+                <label>
+                    <input type="radio" name="fillType" value="solid" checked>
+                    Solid
+                </label>
+
+                <label>
+                    <input type="radio" name="fillType" value="gradient">
+                    Gradient
+                </label>
+            </div>
+
+            <div class="gradient-options">
+                <label>
+                    <input type="radio" name="gradientType" value="linear" checked>
+                    Linear
+                </label>
+
+                <label>
+                    <input type="radio" name="gradientType" value="radial">
+                    Radial
+                </label>
+            </div>
+
+            <div class="color-pickers">
+                <label>
+                    Start Color:
+                    <input type="color" id="startColor" value="#ff006a">
+                </label>
+
+                <label>
+                    End Color:
+                    <input type="color" id="endColor" value="#ff9500">
+                </label>
+            </div>
+        </aside>
+            <section class="code-panel">
+                <pre id="cssCode"></pre>
+            </section>
+       </main>
+
+    </div>
 </body>
 </html>

@@ -1,0 +1,313 @@
+.nunito-regular {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+:root {
+    --color-bg: hsl(0, 0%, 100%);
+    --color-panel: hsl(0, 0%, 95%);
+    --color-text: hsl(0, 0%, 10%);
+    --color-accent: hsl(30, 100%, 50%);
+    --color-button: hsl(0, 0%, 90%);
+  }
+  
+[data-theme="dark"] {
+    --color-bg: hsl(220, 15%, 10%);
+    --color-panel: hsl(220, 15%, 15%);
+    --color-text: hsl(0, 0%, 95%);
+    --color-accent: hsl(30, 100%, 50%);
+    --color-button: hsl(220, 10%, 25%);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Nunito', sans-serif;
+}
+
+.effects-lab {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Nunito', sans-serif;
+}
+
+header {
+    background: var(--color-panel);
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#themeToggle {
+    background: var(--color-button);
+    color: var(--color-text);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#themeToggle:hover {
+    background: var(--color-accent);
+}
+
+.editor-layout {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 250px 1fr 1fr;
+    grid-template-areas: "controls preview code";
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.preview-panel { grid-area: preview; }
+.controls { grid-area: controls; }
+.code-panel { grid-area: code; }
+
+.preview-panel,
+.controls,
+.code-panel {
+    background: var(--color-panel);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.preview-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.preview-box {
+    --shadow-strength: 8px;
+    --blur-amount: 2px;
+    --pulse-speed: 1.5s;
+
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, hsl(330, 100%, 50%), var(--color-accent));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 800;
+    transition: all 0.5s ease;
+}
+
+.controls {
+    background: var(--color-panel);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.controls h2 {
+    margin-top: 1rem;
+}
+
+.controls button {
+    display: block;
+    width: 100%;
+    margin: 0.25rem 0;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: var(--color-button);
+    color: var(--color-text);
+    transition: background 0.3s ease;
+}
+
+.controls label {
+    display: felx;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--color-text);
+}
+
+.controls input[type="range"],
+.controls input[type="radio"],
+.controls input[type="color"] {
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.controls input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+  
+.controls input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+  
+.controls input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 8px;
+}
+
+.controls input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--color-button);
+    outline: none;
+    margin-top: 0.5rem;
+}
+  
+.controls input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+  
+.controls input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+
+.fill-toggle, .gradient-options, .color-pickers {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.controls input[type="radio"],
+.controls input[type="checkbox"] {
+  accent-color: var(--color-accent);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.fill-toggle label,
+.gradient-options label {
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.fill-toggle input,
+.gardient-options input {
+    margin-right: 0.25rem;
+}
+
+.color-pickers label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.controls button.active {
+    background: var(--color-accent);
+    color: #fff;
+}
+
+.preview-panel, .controls, .code-panel {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+
+.preview-box:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: brightness(1.2) saturate(1.3);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.effect-hover-color:hover {
+    background: #ff9500;
+    color: #fff;
+}
+
+.effect-hover-scale:hover {
+    transform: scale(1.1);
+}
+
+.effect-hover-rotate:hover {
+    transform: rotate(5deg);
+}
+
+.effect-shadow {
+    box-shadow: 0 var(--shadow-strength) var(--shadow-strength) rgba(0,0,0,0.25);
+}
+
+.effect-glow {
+    box-shadow: 0 0 12px rgba(255, 149, 0, 0.8);
+}
+
+.effect-filter-bright:hover {
+    filter: brightness(1.2);
+}
+
+.effect-filter-blur:hover {
+    filter: blur(var(--blur-amount));
+}
+
+.effect-filter-gray:hover {
+    filter: grayscale(100%);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.effect-animate-pulse {
+    animation: pulse var(--pulse-speed) infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+.effect-animate-float {
+    animation: float 2s ease-in-out infinite;
+}
+
+@media (max-width: 1200px) {
+    .editor-layout {
+        grid-template-columns: 1fr 250px;
+        grid-template-areas: 
+            "preview controls"
+            " code code";
+    }
+}
+
+@media (max-width: 768px) {
+    .editor-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "preview"
+            "controls"
+            "code";
+    }
+}
