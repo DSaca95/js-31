@@ -1,0 +1,243 @@
+.nunito-sans-regular {
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500;
+  }
+
+:root {
+    --surface-light: #ffffff;
+    --surface-dark: #121212;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Nunito Sans", sans-serif;
+    background: #f5f6f7;
+    color: #222;
+}
+
+.app-header {
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem  1rem;
+    background: #fafafa;
+    border-bottom: 1px solid #eee; 
+}
+
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tab {
+    background: #eee;
+    border: 0;
+    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #ddd;
+    font-weight: 600;
+}
+
+.actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.export {
+    background: #333;
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+}
+
+.app-header h1 {
+    padding: 0.75rem 1rem;
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ui-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin-bottom: 2rem;
+}
+
+.ui-card.light {
+    background: var(--surface-light);
+    color: #111;
+}
+
+.ui-card.dark {
+    background: var(--surface-dark);
+    color: #eee;
+}
+
+.ui-header {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.ui-body {
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.title {
+    margin: 0;
+}
+.body {
+    margin: 0;
+}
+
+.ui-button {
+    border: 0;
+    padding: 0.6rem 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: #e57373;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+.slider {
+    height: 24px;
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+    position: relative;
+}
+
+.slider .thumb {
+    width: 24px;
+    height: 24px;
+    background: #e57373;
+    border-radius: 50%;
+    position: absolute;
+    left: 30%;
+    top: 0;
+}
+
+.contrast-readouts {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 0.75rem 1rem;
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.contrast-readouts .readout em {
+    font-style: normal;
+    opacity: 0.7;
+}
+
+.controls {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.controls h3 {
+    margin-top: 0;
+}
+
+.control-row {
+    display: grid;
+    grid-template-columns: 120px 140px 1fr;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.6rem;
+}
+
+.control-row input[type="text"] {
+    padding: 0.4rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: ui-monospace, monospace;
+}
+
+.control-row select {
+    padding: 0.4rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.palette-section {
+    margin-top: 1rem;
+}
+  
+.palette-section h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #444;
+}
+  
+.palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+}
+  
+.swatch {
+    border-radius: 8px;
+    padding: 0.8rem;
+    color: #fff;
+    font-weight: 800;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.control-actions {
+    margin-top: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+#resetBtn {
+    background: #333;
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    padding: 0.5rem 0.9rem;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+}

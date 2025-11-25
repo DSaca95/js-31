@@ -3,9 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 28 - </title>
+    <title>Day 28 - Color Contrast Checker</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./script.js" defer></script>
 </head>
 <body>
-    
+    <header class="app-header">
+        <nav class="topbar">
+            <div class="tabs">
+                <button class="tab active">User Interfaces</button>
+                <button class="tab">Accessibility</button>
+            </div>
+            <div class="actions">
+
+            </div>
+        </nav>
+        <h1>Color Contrast Checker</h1>
+    </header>
+
+    <main class="layout">
+        <section class="ui-previews">
+            <article class="ui-card light">
+                <header class="ui-header">
+                    <h2 class="title">Title</h2>
+                </header>
+                <div class="ui-body">
+                    <p class="body">Body copy - Sample text</p>
+                    <button class="ui-button">Primary Action</button>
+                    <div class="slider">
+                        <div class="thumb"></div>
+                    </div>
+                </div>
+
+                <footer class="contrast-readouts">
+                    <div class="readout">
+                        <span>Title vs background:</span>
+                        <strong  id="lightTitleRatio">-</strong> <em id="lightTitleLevel">-</em>
+                    </div>
+                    <div class="readout">
+                        <span>Body vs background:</span>
+                        <strong id="lightBodyRatio">-</strong> <em id="lightBodyLevel">-</em>
+                    </div>
+                    <div class="readout">
+                        <span>Button label vs button:</span>
+                        <strong id="lightBtnRatio">-</strong> <em id="lightBtnLevel">-</em>
+                    </div>
+                </footer>
+            </article>
+
+            <article class="ui-card dark">
+                <header class="ui-header">
+                    <h2 class="title">Title</h2>
+                </header>
+                <div class="ui-body">
+                    <p class="body">Body copy - Sample text</p>
+                    <button class="ui-button">Primary Action</button>
+                    <div class="slider">
+                        <div class="thumb"></div>
+                    </div>
+                </div>
+
+                <footer class="contrast-readouts">
+                    <div class="readout">
+                        <span>Title vs background:</span>
+                        <strong id="darkTitleRatio">-</strong> <em id="darkTitleLevel">-</em>
+                    </div>
+                    <div class="readout">
+                        <span>Body vs background:</span>
+                        <strong id="darkBodyRatio">-</strong> <em id="darkBodyLevel">-</em>
+                    </div>
+                    <div class="readout">
+                        <span>Button label vs button:</span>
+                        <strong id="darkBtnRatio">-</strong> <em id="darkBtnLevel">-</em>
+                    </div>
+                </footer>
+            </article>
+        </section>
+
+        <section class="controls">
+            <h3>Current scheme</h3>
+            <div class="control-row">
+                <label for="primaryColor">Primary</label>
+                <input type="color" id="primaryColor" value="#e57373" />
+                <input type="text" id="primaryHex" value="#e57373" />
+            </div>
+
+            <div class="control-row">
+                <label for="secondaryColor">Secondary</label>
+                <input type="color" id="secondaryColor" value="#ffffff" />
+                <input type="text" id="secondaryHex" value="#ffffff" />
+            </div>
+
+            <div class="control-row">
+                <label for="textColor">Text</label>
+                <input type="color" id="textColor" value="#000000" />
+                <input type="text" id="textHex" value="#000000" />
+            </div>
+
+            <div class="control-row">
+                <label>Title style</label>
+                <select id="titleWeight">
+                    <option value="700">Bold</option>
+                    <option value="600">Semibold</option>
+                    <option value="500">Medium</option>
+                    <option value="400">Regular</option>
+                </select>
+
+                <select id="titleSize">
+                    <option value="22">22px</option>
+                    <option value="20">20px</option>
+                    <option value="18">18px</option>
+                    <option value="16">16px</option>
+                </select>
+            </div>
+
+            <div class="control-row">
+                <label>Body style</label>
+                <select id="bodyWeight">
+                    <option value="400">Regular</option>
+                    <option value="500">Medium</option>
+                </select>
+
+                <select id="bodySize">
+                    <option value="16">16px</option>
+                    <option value="14">14px</option>
+                    <option value="12">12px</option>
+                </select>
+            </div>
+
+            <div class="control-row">
+                <label>Button shape</label>
+                <select id="btnRadius">
+                    <option value="24">Pill</option>
+                    <option value="12">Rounded</option>
+                    <option value="6">Soft</option>
+                    <option value="0">Sharp</option>
+                </select>
+            </div>
+
+            <div class="control-row">
+                <label for="btnTextColor">Button text</label>
+                <input type="color" id="btnTextColor" value="#ffffff" />
+                <input type="text" id="btnTextHex" value="#ffffff" />
+            </div>
+
+            <div class="palette-section">
+                <h4>Light Mode Variants</h4>
+                <div class="palette-grid">
+                  <div class="swatch" id="primarySwatchLight">Primary (Light)</div>
+                  <div class="swatch" id="primaryLight">Primary Light</div>
+                  <div class="swatch" id="primaryDark">Primary Dark</div>
+                  <div class="swatch" id="secondarySwatchLight">Secondary (Light)</div>
+                  <div class="swatch" id="secondaryLight">Secondary Light</div>
+                  <div class="swatch" id="secondaryDark">Secondary Dark</div>
+                </div>
+            </div>
+              
+            <div class="palette-section">
+                <h4>Dark Mode Variants</h4>
+                <div class="palette-grid">
+                  <div class="swatch" id="primarySwatchDark">Primary (Dark)</div>
+                  <div class="swatch" id="primaryLightDark">Primary Light (Dark)</div>
+                  <div class="swatch" id="primaryDarkDark">Primary Dark (Dark)</div>
+                  <div class="swatch" id="secondarySwatchDark">Secondary (Dark)</div>
+                  <div class="swatch" id="secondaryLightDark">Secondary Light (Dark)</div>
+                  <div class="swatch" id="secondaryDarkDark">Secondary Dark (Dark)</div>
+                </div>
+            </div>
+
+            <div class="control-actions">
+                <button id="resetBtn">Reset</button>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
