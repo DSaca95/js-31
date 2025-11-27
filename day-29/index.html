@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 29 - </title>
+    <title>Day 29 - Text to Speech App</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./script.js" defer></script>
 </head>
 <body>
-    
+    <div class="tts-app">
+        <h2>Text to Speech</h2>
+
+        <textarea id="ttsInput" rows="6" Placeholder="Type here anything..."></textarea>
+
+        <div class="controls">
+            <button id="speakBtn"><i class="fa-solid fa-play"></i><span>Speak</span></button>
+            <button id="pauseBtn"><i class="fa-solid fa-pause"></i><span>Pause</span></button>
+            <button id="resumeBtn"><i class="fa-solid fa-forward"></i><span>Resume<span></span></button>
+            <button id="stopBtn"><i class="fa-solid fa-stop"></i><span>Stop</span></button>
+
+            <input type="text" id="voiceFilter" placeholder="Filter voices..." />
+            <select id="voiceSelect"></select>
+        </div>
+
+        <div class="progress">
+            <strong>Currently speaking:</strong>
+            <span id="currentWord">-</span>
+        </div>
+    </div>
 </body>
 </html>

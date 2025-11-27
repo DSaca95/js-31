@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 26 - </title>
+    <title>Day 26 - Image Gallery App</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./script.js" defer></script>
 </head>
 <body>
+    <header>
+        <h1>Image Gallery</h1>
+    </header>
+    <main class="gallery-grid" id="gallery"></main>
+    <div class="modal" id="lightbox">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="lightbox-img">
+        <div class="caption" id="lightbox-caption"></div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
     
 </body>
 </html>
