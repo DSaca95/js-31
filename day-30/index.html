@@ -1,11 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 30 - </title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day-30 - Emoji Picker App</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/style.css" />
+    <script type="module" src="./src/script.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+        <header class="emoji-app">
+            <div class="search-bar">
+                <input type="text" id="emojiSearch" placeholder="Search emojis..." />
+            </div>
+            <div class="pill-filters"></div>
+            <div id="sortOrder">
+                <button data-category="alpha">Alphabetical</button>
+                <button data-category="unicode">By Unicode</button>
+            </div>
+        </header>
+        
+        <main class="emoji-grid" id="emojiGrid"></main>
+    </div>
+    <div id="toast" class="toast"></div>
+  </body>
 </html>
